@@ -2,12 +2,14 @@
     --main-background: hsl(233, 47%, 7%);
     --card-background: hsl(244, 38%, 16%);
     --accent: hsl(277, 64%, 61%);
+    --trans-text: hsla(0, 0%, 100%, 0.75);
+    --headings: hsla(0, 0%, 100%, 0.6);
 }
 
 * {
     padding: 0;
     margin: 0;
-    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -19,28 +21,38 @@ body {
     width: 100%;
     background-color: var(--main-background);
     font-family: 'Inter', sans-serif;
-    font-family: 'Lexend Deca', sans-serif;
 }
 
 .card {
-    display: grid;
-    height: 570px;
-    width: 1400px;
+    display: flex;
+    height: 540px;
+    width: 1440px;
     background-color: var(--card-background);
     border-radius: 8px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "text image";
 }
 
 .text-container {
-    grid-area: text;
+    flex: 1;
+    display: flex;
+    width: 100%;
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    padding-left: 64px;
+    padding-right: 120px;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .image-container {
-    grid-area: image;
+    flex: 1.3;
     background-image: url(./images/image-header-desktop.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
     border-radius: 0px 8px 8px 0px;
     background-blend-mode: var(--accent);
     filter: invert(15%) sepia(34%) saturate(1266%) hue-rotate(233deg) brightness(69%) contrast(100%);
@@ -58,4 +70,57 @@ body {
 .attribution a {
     color: orange;
     text-decoration: none;
+}
+
+.heading {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    width: 100%;
+    font-weight: 700px;
+    
+}
+
+span {
+    color: var(--accent);
+}
+
+.benefits {
+    margin-top: 40px;
+    width: 420px;
+    font-size: 15px;
+    color: white;
+    font-weight: 400!important;
+    line-height: 24px;
+}
+
+.icon-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 80px;
+    padding-right: 36px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container p {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.second {
+    color: var(--trans-text)!important;
+    font-size: 15px!important;
+    text-transform: uppercase;
+    font-weight: 400!important;
 }
